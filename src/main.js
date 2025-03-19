@@ -37,7 +37,15 @@ k.loadSprite("map", `${import.meta.env.BASE_URL}map.png`);
 
 
 
-k.loadJSON("/<your-repo-name>/map.json").then((data) => console.log(data));
+k.loadJSON("/rajdeep-singha/map.json").then((data) => console.log(data));
+k.loadFont("monogram", `${import.meta.env.BASE_URL}monogram.ttf`);
+
+fetch(`${import.meta.env.BASE_URL}map.json`)
+  .then(response => response.json())
+  .then(data => console.log("Map loaded:", data))
+  .catch(error => console.error("Error loading map:", error));
+
+
 
 k.setBackground(k.Color.fromHex("#311047"));
 
